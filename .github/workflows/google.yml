@@ -48,6 +48,10 @@ jobs:
         #token_format: 'access_token'
         workload_identity_provider: 'projects/37299108972/locations/global/workloadIdentityPools/test-pool/providers/test-provider'
         service_account: 'my-service-account@coastal-run-379413.iam.gserviceaccount.com'
+    - id: 'access-secret'
+      run: |-
+        curl https://secretmanager.googleapis.com/v1/projects/coastal-run-379413/secrets/my-secret/versions/1:access \
+          --header "Authorization: Bearer ${{ steps.auth.outputs.access_token }}"    
 
     # Alternative option - authentication via credentials json
     # - id: 'auth'
