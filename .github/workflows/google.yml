@@ -66,8 +66,8 @@ jobs:
     - id: Set up GKE credentials
       uses: google-github-actions/get-gke-credentials@v0
       with:
-        cluster_name: cluster-1
-        location: us-central1
+        cluster_name: 'cluster-1'
+        location: 'us-central1'
 
     # Build the Docker image
     - name: Build
