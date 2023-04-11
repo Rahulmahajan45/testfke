@@ -55,55 +55,53 @@ template:
 
  metadata:
 
- labels:
+  labels:
 
-  app: md-deployment-app1
+   app: md-deployment-app1
+   env: dev
+ spec:
 
-  env: dev
+  containers:
 
-spec:
+  - name: hello-mohit
 
- containers:
+    image: nginx
 
- - name: hello-mohit
+    resources:
 
-   image: nginx
+     limits:
 
-   resources:
+      cpu: 100m
 
-    limits:
+      memory: 250Mi
 
-     cpu: 100m
+     requests:
 
-     memory: 250Mi
+      cpu: 10m
 
-   requests:
+      memory: 125Mi
 
-     cpu: 10m
+    ports:
 
-     memory: 125Mi
+    - containerPort:
+      protocol: TCP
 
-  ports:
+    livenessProbe:
 
-  - containerPort:
-    protocol: TCP
+      httpGet:
 
-  livenessProbe:
+       port: 80
 
-   httpGet:
-
-    port: 80
-
-  initialDelaySeconds: 15
+     initialDelaySeconds: 15
  
-  timeoutSeconds: 1
+     timeoutSeconds: 1
 
- readinessProbe:
+    readinessProbe:
 
-  httpGet:
+      httpGet:
 
-   port: 80
+      port: 80
 
-  initialDelaySeconds: 0
+      initialDelaySeconds: 0
 
-  timeoutSeconds: 1
+      timeoutSeconds: 1
