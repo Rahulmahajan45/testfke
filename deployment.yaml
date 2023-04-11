@@ -10,8 +10,9 @@ metadata:
 spec:
 
  selector:
+  env: dev
 
- app: md-deployment-app1
+ 
 
  type: LoadBalancer
 
@@ -37,7 +38,7 @@ metadata:
 
  matchLabels:
 
- app: md-deployment-app1
+  env: dev
 
 replicas: 4
 
@@ -57,7 +58,7 @@ template:
 
   labels:
 
-   app: md-deployment-app1
+   
    env: dev
  spec:
 
