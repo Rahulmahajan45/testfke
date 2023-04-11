@@ -5,9 +5,7 @@ kind: Service
 
 metadata:
 
- name: mohit-service-new
-
- namespace: mohit-test
+ name: gke-test
 
 spec:
 
