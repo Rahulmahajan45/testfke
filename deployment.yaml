@@ -29,11 +29,9 @@ kind: Deployment
 
 metadata:
 
- name: mohit-service-new
+ name: gke-test
 
- namespace: mohit-test
-
-spec:
+ spec:
 
  selector:
 
