@@ -66,42 +66,10 @@ template:
   - name: hello-mohit
 
     image: nginx
-
-    resources:
-
-     limits:
-
-      cpu: 100m
-
-      memory: 250Mi
-
-     requests:
-
-      cpu: 10m
-
-      memory: 125Mi
-
+    
     ports:
 
     - containerPort:
       protocol: TCP
 
-    livenessProbe:
-
-      httpGet:
-
-       port: 80
-
-     initialDelaySeconds: 15
  
-     timeoutSeconds: 1
-
-    readinessProbe:
-
-      httpGet:
-
-      port: 80
-
-      initialDelaySeconds: 0
-
-      timeoutSeconds: 1
