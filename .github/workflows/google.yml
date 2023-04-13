@@ -30,7 +30,6 @@ jobs:
     steps:
     - name: Get public IP
       run: echo "::set-output name=public_ip::$(curl -s http://whatismyip.akamai.com/)"
-    steps:
     - name: Checkout
       uses: actions/checkout@v3
 
