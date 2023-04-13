@@ -6,8 +6,7 @@
 # GitHub recommends pinning actions to a commit SHA.
 # To get a newer version, you will need to update the SHA.
 # You can also reference a tag or branch, but the action may change without warning.
-- name: Get public IP
-  run: echo "::set-output name=public_ip::$(curl -s http://whatismyip.akamai.com/)" 
+ 
 
 name: Build and Deploy to GKE
 
@@ -28,7 +27,9 @@ jobs:
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
     environment: production
-
+    steps:
+    - name: Get public IP
+      run: echo "::set-output name=public_ip::$(curl -s http://whatismyip.akamai.com/)"
     steps:
     - name: Checkout
       uses: actions/checkout@v3
